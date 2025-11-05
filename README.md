@@ -3,7 +3,7 @@
 A production-ready Android automation that monitors Amazon product prices, detects discounts, and pushes instant alerts across your preferred channels. This Amazon Price Tracker Bot eliminates manual checks, scales across devices/accounts, and delivers clean, structured data for decisions and dashboards. Use it to protect margins, catch lightning deals, and automate price intelligence—reliably and at scale.
 
 <p align="center">
-  <a href="https://Appilot.app" target="_blank"><img src="media/appilot-baner.png" alt="Appilot Banner" width="100%"></a>
+  <a href="https://Appilot.app" target="_blank"><img src="Media/appilot-baner.png" alt="Appilot Banner" width="100%"></a>
 </p>
 <p align="center">
  <a href="https://t.me/devpilot1" target="_blank"><img src="https://img.shields.io/badge/Chat%20on-Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
