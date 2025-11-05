@@ -17,7 +17,7 @@ A production-ready Android automation that monitors Amazon product prices, detec
    <strong>If you are looking for custom Amazon Price Tracker Bot, you've just found your team — Let’s Chat.👆👆</strong>
 </p>
 
-##Introduction
+## Introduction
 
 **What it does**  
 Continuously tracks product prices, availability, and discount events on Amazon using Android device automation, then triggers alerts and exports structured records for BI or downstream systems.
@@ -35,7 +35,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
 - Built-in resilience: retry, backoff, crash recovery, and device watchdogs for stable overnight runs.
 - Operates with human-like gestures, randomized timings, and scroll patterns to reduce detection risks.
 
-##Core Features
+## Core Features
 
 - **Real Devices and Emulators:** Run on physical phones or Android emulators (BlueStacks, Nox) for authentic UI flows and better resilience to UI changes.  
 - **No-ADB Wireless Automation:** Control devices over Wi-Fi without tethered ADB; cleaner racks and fewer cable failures during long sessions.  
@@ -77,7 +77,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
 - **Tools:** Appilot, Android Debug Bridge (ADB), Appium Inspector, BlueStacks/Nox, Scrcpy, Firebase Test Lab, MonkeyRunner, Accessibility Service  
 - **Infrastructure:** Dockerized device farms, Cloud emulators, Proxy networks, Parallel Device Execution, Task Queues, Real device farm
 
-##Directory Structure
+## Directory Structure
 
     amazon-price-tracker-bot/
     │
@@ -125,7 +125,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
     ├── build.gradle.kts
     └── README.md
 
-##Use Cases (must)
+## Use Cases (must)
 
 - **E-commerce operators** use it to watch competitor ASINs and trigger repricing, so they can protect margins and Buy Box share.  
 - **Private-label brands** use it to detect sudden couponing or stock-outs, so they can time ads and inventory replenishment.  
@@ -149,7 +149,7 @@ Current price, list price (strike-through), coupon presence/value, stock signals
 **How are alerts delivered?**  
 Via Telegram bot, email, or generic webhooks. Each alert contains the ASIN, previous vs current price, delta, and a deep link.
 
-##Performance & Reliability Benchmarks (must)
+## Performance & Reliability Benchmarks (must)
 
 - **Execution Speed:** ~2.5–4.0 seconds per PDP on warmed devices; ~400–900 SKUs/hour per 10-device shard (typical).  
 - **Success Rate:** 95% successful extractions over sustained 24-hour runs with retries and backoff enabled.  
