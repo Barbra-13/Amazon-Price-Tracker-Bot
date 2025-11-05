@@ -1,0 +1,245 @@
+<svg viewBox="0 0 1920 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1729;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF9900;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFB84D;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <linearGradient id="priceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0099FF;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <linearGradient id="alertGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FF88;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00CC66;stop-opacity:0.6" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Animated price chart path -->
+    <clipPath id="chartClip">
+      <rect x="200" y="150" width="600" height="400"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="720" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.08">
+    <path d="M0,0 L1920,0" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+    <path d="M0,180 L1920,180" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+    <path d="M0,360 L1920,360" stroke="#00D9FF" stroke-width="0.5" opacity="0.5"/>
+    <path d="M0,540 L1920,540" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+    <path d="M0,720 L1920,720" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+    
+    <path d="M480,0 L480,720" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+    <path d="M960,0 L960,720" stroke="#00D9FF" stroke-width="0.5" opacity="0.5"/>
+    <path d="M1440,0 L1440,720" stroke="#00D9FF" stroke-width="0.5" opacity="0.3"/>
+  </g>
+
+  <!-- Left side: Price chart visualization -->
+  <g opacity="0.9">
+    <!-- Chart background -->
+    <rect x="120" y="180" width="680" height="360" rx="8" fill="#0d1228" opacity="0.6" stroke="#00D9FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <!-- Y-axis price labels -->
+    <text x="140" y="220" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="11" opacity="0.6">$149</text>
+    <text x="140" y="320" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="11" opacity="0.6">$119</text>
+    <text x="140" y="420" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="11" opacity="0.6">$89</text>
+    <text x="140" y="520" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="11" opacity="0.6">$59</text>
+    
+    <!-- Price trend line -->
+    <path d="M 200,280 L 280,260 L 360,290 L 440,240 L 520,220 L 600,250 L 680,200 L 760,190" 
+          stroke="url(#priceGradient)" 
+          stroke-width="3" 
+          fill="none" 
+          filter="url(#glow)"
+          stroke-linecap="round"/>
+    
+    <!-- Price area fill -->
+    <path d="M 200,280 L 280,260 L 360,290 L 440,240 L 520,220 L 600,250 L 680,200 L 760,190 L 760,540 L 200,540 Z" 
+          fill="url(#priceGradient)" 
+          opacity="0.15"/>
+    
+    <!-- Data points -->
+    <circle cx="200" cy="280" r="4" fill="#00D9FF" filter="url(#softGlow)"/>
+    <circle cx="360" cy="290" r="4" fill="#00D9FF" filter="url(#softGlow)"/>
+    <circle cx="520" cy="220" r="4" fill="#00D9FF" filter="url(#softGlow)"/>
+    <circle cx="680" cy="200" r="5" fill="#00FF88" filter="url(#glow)"/>
+    <circle cx="760" cy="190" r="6" fill="#00FF88" filter="url(#glow)">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Price drop indicator -->
+    <text x="680" y="175" fill="#00FF88" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" filter="url(#softGlow)">-24%</text>
+    
+    <!-- Time axis labels -->
+    <text x="200" y="560" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="10" opacity="0.5">12h</text>
+    <text x="440" y="560" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="10" opacity="0.5">6h</text>
+    <text x="680" y="560" fill="#00D9FF" font-family="Inter, system-ui, sans-serif" font-size="10" opacity="0.5">Now</text>
+  </g>
+
+  <!-- Center: Main title and tagline -->
+  <g>
+    <!-- Project name -->
+    <text x="960" y="300" 
+          font-family="Inter, system-ui, sans-serif" 
+          font-size="68" 
+          font-weight="700" 
+          fill="#FFFFFF" 
+          text-anchor="middle"
+          letter-spacing="-1">
+      Amazon Price Tracker Bot
+    </text>
+    
+    <!-- Accent line -->
+    <rect x="760" y="330" width="400" height="3" fill="url(#accentGradient)" rx="1.5"/>
+    
+    <!-- Tagline -->
+    <text x="960" y="380" 
+          font-family="Inter, system-ui, sans-serif" 
+          font-size="22" 
+          font-weight="400" 
+          fill="#B8C5D6" 
+          text-anchor="middle"
+          opacity="0.9">
+      Automated Price Intelligence at Scale
+    </text>
+    
+    <!-- Sub-tagline -->
+    <text x="960" y="420" 
+          font-family="Inter, system-ui, sans-serif" 
+          font-size="16" 
+          font-weight="300" 
+          fill="#7A8B9E" 
+          text-anchor="middle"
+          opacity="0.8">
+      Android Automation • Real-time Alerts • Multi-device Scaling
+    </text>
+  </g>
+
+  <!-- Right side: Device automation & alerts -->
+  <g opacity="0.85">
+    <!-- Mobile device frame 1 -->
+    <rect x="1180" y="200" width="140" height="280" rx="12" fill="#0d1228" opacity="0.7" stroke="#FF9900" stroke-width="2" stroke-opacity="0.6"/>
+    <rect x="1190" y="215" width="120" height="250" rx="4" fill="#1a1f3a" opacity="0.4"/>
+    
+    <!-- Device screen content simulation -->
+    <rect x="1200" y="230" width="100" height="8" rx="2" fill="#00D9FF" opacity="0.6"/>
+    <rect x="1200" y="250" width="80" height="8" rx="2" fill="#00D9FF" opacity="0.4"/>
+    <rect x="1200" y="270" width="90" height="8" rx="2" fill="#00D9FF" opacity="0.5"/>
+    
+    <!-- Price display on device -->
+    <text x="1250" y="320" fill="#00FF88" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="middle">$89.99</text>
+    <text x="1250" y="345" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" text-decoration="line-through">$119.99</text>
+    
+    <!-- Mobile device frame 2 (slightly offset) -->
+    <rect x="1350" y="240" width="140" height="280" rx="12" fill="#0d1228" opacity="0.6" stroke="#00D9FF" stroke-width="2" stroke-opacity="0.5"/>
+    <rect x="1360" y="255" width="120" height="250" rx="4" fill="#1a1f3a" opacity="0.4"/>
+    
+    <!-- Scanning indicator -->
+    <circle cx="1420" cy="380" r="20" fill="none" stroke="#00D9FF" stroke-width="2" opacity="0.6">
+      <animate attributeName="r" values="20;26;20" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1420" cy="380" r="8" fill="#00D9FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Mobile device frame 3 (background) -->
+    <rect x="1520" y="220" width="140" height="280" rx="12" fill="#0d1228" opacity="0.5" stroke="#FFB84D" stroke-width="2" stroke-opacity="0.4"/>
+  </g>
+
+  <!-- Alert notification boxes -->
+  <g opacity="0.9">
+    <!-- Alert 1 -->
+    <rect x="1180" y="120" width="220" height="60" rx="8" fill="#0d1228" opacity="0.8" stroke="#00FF88" stroke-width="1.5"/>
+    <circle cx="1200" cy="150" r="8" fill="#00FF88" filter="url(#softGlow)"/>
+    <text x="1220" y="145" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Price Drop Alert</text>
+    <text x="1220" y="162" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="10">Target reached: $89.99</text>
+    
+    <!-- Alert 2 -->
+    <rect x="1430" y="140" width="200" height="55" rx="8" fill="#0d1228" opacity="0.7" stroke="#FFB84D" stroke-width="1.5"/>
+    <circle cx="1448" cy="167" r="7" fill="#FFB84D" filter="url(#softGlow)"/>
+    <text x="1465" y="163" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Deal Found</text>
+    <text x="1465" y="178" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="9">Lightning deal active</text>
+  </g>
+
+  <!-- Data flow visualization (connecting elements) -->
+  <g opacity="0.4">
+    <!-- Flow lines from chart to center -->
+    <path d="M 800,360 Q 880,360 920,360" stroke="#00D9FF" stroke-width="1.5" fill="none" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Flow lines from center to devices -->
+    <path d="M 1000,360 Q 1090,360 1180,300" stroke="#FF9900" stroke-width="1.5" fill="none" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 1000,370 Q 1090,380 1180,420" stroke="#00D9FF" stroke-width="1.5" fill="none" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating data particles -->
+  <g opacity="0.6">
+    <circle cx="300" cy="150" r="2" fill="#00D9FF">
+      <animate attributeName="cy" values="150;120;150" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="600" r="2" fill="#FFB84D">
+      <animate attributeName="cy" values="600;630;600" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="200" r="2" fill="#00FF88">
+      <animate attributeName="cy" values="200;170;200" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1550" cy="550" r="2" fill="#00D9FF">
+      <animate attributeName="cy" values="550;580;550" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Bottom tech indicators -->
+  <g opacity="0.5">
+    <text x="120" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11">APPIUM</text>
+    <text x="240" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11">ANDROID AUTO</text>
+    <text x="400" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11">REAL-TIME</text>
+    
+    <text x="1600" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="end">MULTI-DEVICE</text>
+    <text x="1480" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="end">SCALABLE</text>
+    <text x="1360" y="680" fill="#7A8B9E" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="end">24/7</text>
+  </g>
+
+  <!-- Subtle corner accents -->
+  <path d="M 0,0 L 60,0 L 60,2 L 2,2 L 2,60 L 0,60 Z" fill="#00D9FF" opacity="0.3"/>
+  <path d="M 1920,0 L 1860,0 L 1860,2 L 1918,2 L 1918,60 L 1920,60 Z" fill="#FF9900" opacity="0.3"/>
+  <path d="M 0,720 L 60,720 L 60,718 L 2,718 L 2,660 L 0,660 Z" fill="#FFB84D" opacity="0.3"/>
+  <path d="M 1920,720 L 1860,720 L 1860,718 L 1918,718 L 1918,660 L 1920,660 Z" fill="#00FF88" opacity="0.3"/>
+</svg>
