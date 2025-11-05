@@ -45,7 +45,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
 - **Exponential Growth for Your Account:** Catch more deals, trigger smarter restocks, and feed repricers/ads with timely signals to compound growth.  
 - **Premium Support:** Priority onboarding, SLA-backed incident response, and hands-on tuning for your catalog and markets.  
 
-**Additional Capabilities**
+## Additional Capabilities
 
 | Feature | Description |
 |---|---|
@@ -63,14 +63,14 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
   </a>
 </p>
 
-## How It Works (must)
+## How It Works
 
 1. **Input or Trigger** — From the Appilot dashboard, select SKUs/ASINs/keywords, regions, thresholds, and alert channels; start a one-off run or schedule recurring scans.  
 2. **Core Logic** — Appilot drives the Android device/emulator via **UI Automator/Appium**, navigating Amazon, opening PDPs, revealing price blocks, expanding coupon sections, and capturing structured fields.  
 3. **Output or Action** — The bot emits normalized records (price, list price, coupon, stock, timestamp, device, locale) and triggers alerts when thresholds or deltas are hit.  
 4. **Other functionalities** — Automatic retries, exponential backoff, health pings, screenshot-on-error, rolling logs, and parallel execution across the device fleet; all tunable in the dashboard.
 
-## Tech Stack (must)
+## Tech Stack
 
 - **Language:** Kotlin, Java, Python, JavaScript  
 - **Frameworks:** Appium, UI Automator, Espresso, Robot Framework, Cucumber  
@@ -125,7 +125,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
     ├── build.gradle.kts
     └── README.md
 
-## Use Cases (must)
+## Use Cases
 
 - **E-commerce operators** use it to watch competitor ASINs and trigger repricing, so they can protect margins and Buy Box share.  
 - **Private-label brands** use it to detect sudden couponing or stock-outs, so they can time ads and inventory replenishment.  
@@ -149,7 +149,7 @@ Current price, list price (strike-through), coupon presence/value, stock signals
 **How are alerts delivered?**  
 Via Telegram bot, email, or generic webhooks. Each alert contains the ASIN, previous vs current price, delta, and a deep link.
 
-## Performance & Reliability Benchmarks (must)
+## Performance & Reliability Benchmarks
 
 - **Execution Speed:** ~2.5–4.0 seconds per PDP on warmed devices; ~400–900 SKUs/hour per 10-device shard (typical).  
 - **Success Rate:** 95% successful extractions over sustained 24-hour runs with retries and backoff enabled.  
@@ -162,3 +162,8 @@ Via Telegram bot, email, or generic webhooks. Each alert contains the ASIN, prev
 **License & Support**  
 Commercial support available with SLAs, onboarding, and custom feature development. Reach out for device farm sizing, KPI planning, and integration help.
 
+<p align="center">
+<a href="https://cal.com/app-pilot-m8i8oo/30min" target="_blank">
+  <img src="https://img.shields.io/badge/Book%20a%20Call%20with%20Us-34A853?style=for-the-badge&logo=googlecalendar&logoColor=white" alt="Book a Call">
+</a>
+</p>
