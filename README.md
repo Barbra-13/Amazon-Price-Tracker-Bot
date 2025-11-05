@@ -59,7 +59,7 @@ Higher deal-capture rate, faster competitive response, reliable audit trails, an
 </p>
 <p align="center">
   <a href="https://appilot.app" target="_blank">
-    <img src="media/amazon-price-tracker-bot-banner.png" alt="amazon-price-tracker-bot-architecture" width="95%">
+    <img src="Media/amazon-price_tracker_bot_banner.svg" alt="amazon-price-tracker-bot-architecture" width="95%">
   </a>
 </p>
 
